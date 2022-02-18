@@ -35,10 +35,19 @@ export default {
     };
   },
   created: function () {
-    axios
-      .get("http://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
-      .then((res) => {
+    axios({
+      url: 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0',
+      headers: {
+         'content-type': 'application/json',
+            'accept': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS'
+      }
+    })
+       .then((res) => {
         this.pokemons = res.data.results;
+      }).catch(err => {
+        console.log(err.response);
       });
   },
   components: {
