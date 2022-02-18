@@ -20,6 +20,9 @@
                         {{ability.ability.name | capitalize}}<br>
                     </span>
                 </div>
+                <div>
+                    <slot />
+                </div>
             </div>
         </div>
     </div>

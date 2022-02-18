@@ -15,7 +15,9 @@
     <div id="pokemons">
         <div style='width: 740px; column-count:2; column-rule-style: dashed;'>
           <div v-for="(poke, index) in resultadoBusca" :key="index">
-            <Pokemon :name="poke.name" :url="poke.url" :num="index" />
+            <Pokemon :name="poke.name" :url="poke.url" :num="index">
+              children
+            </Pokemon>
         </div>
       </div>
     </div>
